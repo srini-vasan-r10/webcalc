@@ -1,0 +1,120 @@
+body {
+            background-color: #f0f0f0;
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .calculator-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .calculator {
+            perspective: 800px;
+            background: linear-gradient(to bottom right, #d0d0d0, #b0b0b0);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transform-style: preserve-3d;
+            user-select: none;
+            width: 300px;
+            margin-left: 20px;
+        }
+
+        .display {
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: 24px;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        .button {
+            background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .button:active {
+            transform: translateY(2px);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .operator {
+            background: linear-gradient(to bottom, #ff9500, #ff8000);
+            color: white;
+        }
+
+        .equal {
+            background: linear-gradient(to bottom, #007aff, #0062cc);
+            color: white;
+            grid-column: span 2;
+        }
+
+        .clear {
+            background: linear-gradient(to bottom, #d9534f, #c9302c);
+            color: white;
+            grid-column: span 2;
+        }
+
+        .keyboard-tips {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-left: 50px;
+            flex-grow: 1;
+            max-width: 400px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .keyboard-tips h2 {
+            text-align: center;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 100px;
+            margin-left: -50px;
+            background-color: rgba(0, 123, 255, 0.8);
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 8px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            top: 10%;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.2s, visibility 0.2s;
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
